@@ -17,5 +17,3 @@ CREATE TABLE user_inventory (
         quantity int,
         PRIMARY KEY(id)
 );
-
-
