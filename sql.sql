@@ -19,7 +19,3 @@ CREATE TABLE user_inventory (
 );
 
 
-
-
-
-
