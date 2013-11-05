@@ -5,12 +5,9 @@
 		if($password != $confirm) { ?>
 <span style='color:red'>Error: Passwords do not match!</span>		
 <?php	} else {
-			$dbhost = 'localhost';
-			$dbuser = 'user';
-			$dbpass = 'pass';
-			$dbname = 'name';
-			$conn = mysql_connect($dbhost,$dbuser,$dbpass)
-				or die ('Error connecting to mysql');
+                        require_once 'config.php';
+                        $conn = mysql_connect($dbhost,$dbuser,$dbpass)
+                                or die ('Error connecting to mysql');
 			mysql_select_db($dbname);
 			$query = sprintf("SELECT COUNT(id) FROM users WHERE UPPER(username) = UPPER('%s')",
 				mysql_real_escape_string($_POST['username']));
