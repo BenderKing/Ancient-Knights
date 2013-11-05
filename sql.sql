@@ -17,3 +17,5 @@ CREATE TABLE user_inventory (
         quantity int,
         PRIMARY KEY(id)
 );
+ALTER TABLE `users` ADD `is_admin` tinyint(1) NOT NULL DEFAULT '0';
+ALTER TABLE `users` ADD `last_login` timestamp NULL;
