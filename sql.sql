@@ -38,4 +38,3 @@ INSERT INTO stats(display_name,short_name) VALUES ('Magic','mag');
 INSERT INTO stats(display_name,short_name) VALUES ('Attack','atk');
 ALTER TABLE `users` ADD `is_admin` tinyint(1) NOT NULL DEFAULT '0';
 ALTER TABLE `users` ADD `last_login` timestamp NULL;
-SELECT value FROM user_stats WHERE stat_id = (SELECT id FROM stats WHERE display_name = <foo> OR short_name = <foo>) AND user_id = <bar>
