@@ -2,6 +2,9 @@ CREATE TABLE users (
         id int NOT NULL AUTO_INCREMENT,
         username varchar(250),
         password varchar(50),
+        attack int,
+        defence int,
+        magic int,
         PRIMARY KEY(id)
 );
 CREATE TABLE items (
@@ -17,5 +20,19 @@ CREATE TABLE user_inventory (
         quantity int,
         PRIMARY KEY(id)
 );
+CREATE TABLE stats (
+        id int NOT NULL AUTO_INCREMENT,
+        display_name text,
+        short_name varchar(10),
+        PRIMARY KEY(id)
+);
+CREATE TABLE user_stats (
+        id int NOT NULL AUTO_INCREMENT,
+        user_id int,
+        stat_id int,
+        value text,
+        PRIMARY KEY(id)
+);
+INSERT INTO stats(display_name,short_name) VALUES ('Magic Defence','mdef');
 ALTER TABLE `users` ADD `is_admin` tinyint(1) NOT NULL DEFAULT '0';
 ALTER TABLE `users` ADD `last_login` timestamp NULL;
